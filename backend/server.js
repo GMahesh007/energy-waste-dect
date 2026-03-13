@@ -29,6 +29,7 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'Backend is running correctly' });
 });
 
+app.use('/api/auth', require('./routes/authRoutes')); // include auth routes
 app.use('/api', require('./routes/billRoutes')); // Include bill upload routes
 app.use('/api', require('./routes/analyticsRoutes')); // Include analytics routes
 
